@@ -3,7 +3,7 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName = '';
+let candidateName = input.question('What is your name? ');
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = 'Who was the first American woman in space? ';
 let correctAnswer = 'Sally Ride';
@@ -15,7 +15,7 @@ let candidateAnswers;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  return candidateName = input.question('What is your name? ');
+  return candidateName;
 }
 
 function askQuestion() {
