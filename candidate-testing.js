@@ -5,11 +5,11 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName = '';
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = ['Who was the first American woman in space? ', 'True or false: 5 kilometer == 5000 meters? ', '(5 + 3)/2 * 10 = ? ', 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ', 'What is the minimum crew size for the ISS? '];
-let correctAnswer = ['Sally Ride', "true", "40", "Trajectory", "3"];
+// let question = ['Who was the first American woman in space? ', 'True or false: 5 kilometer == 5000 meters? ', '(5 + 3)/2 * 10 = ? ', 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ', 'What is the minimum crew size for the ISS? '];
+// let correctAnswer = ['Sally Ride', "true", "40", "Trajectory", "3"];
 let candidateAnswer;
-let questions;
-let correctAnswers;  
+let questions = ['Who was the first American woman in space? ', 'True or false: 5 kilometer == 5000 meters? ', '(5 + 3)/2 * 10 = ? ', 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ', 'What is the minimum crew size for the ISS? '];
+let correctAnswers = ['Sally Ride', "true", "40", "Trajectory", "3"];  
 let candidateAnswers = [];
 let numberCorrect = 0;
 let testString = '';
@@ -24,14 +24,14 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  for (let i = 0; i < question.length; i++) {
+  for (let i = 0; i < questions.length; i++) {
     
     // !!! Couldn't figure out how to get input validation to prevent empty string submission !!!
     // while (candidateAnswer !== '') {
     //   candidateAnswer = input.question(question[i]);
     // }
     
-    candidateAnswer = input.question(question[i]);
+    candidateAnswer = input.question(questions[i]);
 
     candidateAnswers.push(String(candidateAnswer));
   }
@@ -42,7 +42,7 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i = 0; i < candidateAnswers.length; i++) {
 
-    testString += `${i + 1}) ${question[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswer[i]}\n\n`;
+    testString += `${i + 1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`;
 
     if (candidateAnswers[i].toLowerCase() === correctAnswer[i].toLowerCase()) {
       numberCorrect += 1;
@@ -50,7 +50,7 @@ function gradeQuiz(candidateAnswers) {
   }
   
 
-  grade = (numberCorrect / question.length) * 100;
+  grade = (numberCorrect / questions.length) * 100;
 
   if (grade >= 80) {
     status = 'PASSED';
@@ -58,7 +58,7 @@ function gradeQuiz(candidateAnswers) {
     status = 'FAILED';
   }
 
-  testSummary = `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<\n>>> Status: ${status} <<<`;
+  testSummary = `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct) <<<\n>>> Status: ${status} <<<`;
 
   return grade;
 }
