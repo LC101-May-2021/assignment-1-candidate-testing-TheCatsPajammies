@@ -22,7 +22,9 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < question.length; i++) {
+     
     let candidateAnswer = input.question(question[i]);
+    
     candidateAnswers.push(String(candidateAnswer));
   }
 }
@@ -42,7 +44,9 @@ function gradeQuiz(candidateAnswers) {
   } else {
     status = 'FAILED';
   }
-  console.log(`\nCandidate Name: ${candidateName}
+
+
+  return console.log(`\nCandidate Name: ${candidateName}
 1) Who was the first American woman in space?
 Your Answer: ${candidateAnswers[0]}
 Correct Answer: ${correctAnswer[0]}
@@ -64,9 +68,7 @@ Your Answer: ${candidateAnswers[4]}
 Correct Answer: ${correctAnswer[4]}
 
 >>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<
->>> Status: ${status} <<<`);
-
-  //return `${grade}`;
+>>> Status: ${status} <<<`);;
 }
 
 function runProgram() {
