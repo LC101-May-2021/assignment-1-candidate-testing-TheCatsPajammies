@@ -13,6 +13,7 @@ let correctAnswers;
 let candidateAnswers =[];
 let numberCorrect = 0;
 let testString = '';
+let testSummary = '';
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -55,9 +56,9 @@ function gradeQuiz(candidateAnswers) {
     status = 'FAILED';
   }
 
-  return console.log(`\nCandidate Name: ${candidateName}
-${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<
->>> Status: ${status} <<<`);
+  testSummary = `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<\n>>> Status: ${status} <<<`;
+
+  return console.log(testSummary);
 }
 
 function runProgram() {
