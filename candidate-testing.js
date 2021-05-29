@@ -12,6 +12,7 @@ let questions;
 let correctAnswers;  
 let candidateAnswers =[];
 let numberCorrect = 0;
+//let testSummary = ``;
 
 
 function askForName() {
@@ -28,47 +29,29 @@ function askQuestion() {
     candidateAnswers.push(String(candidateAnswer));
   }
 }
-
+let testString = ``;
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i = 0; i < candidateAnswers.length; i++) {
+    testString += `${i + 1}) ${question[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswer[i]}\n\n`;
     if (candidateAnswers[i].toLowerCase() === correctAnswer[i].toLowerCase()) {
       numberCorrect += 1;
     }
   }
   
+
   let grade = (numberCorrect / question.length) * 100;
+
   if (grade >= 80) {
     status = 'PASSED';
   } else {
     status = 'FAILED';
   }
 
-
   return console.log(`\nCandidate Name: ${candidateName}
-1) Who was the first American woman in space?
-Your Answer: ${candidateAnswers[0]}
-Correct Answer: ${correctAnswer[0]}
-
-2) True or false: 5000 meters = 5 kilometers.
-Your Answer: ${candidateAnswers[1]}
-Correct Answer: ${correctAnswer[1]}
-
-3) (5 + 3)/2 * 10 = ?
-Your Answer: ${candidateAnswers[2]}
-Correct Answer: ${correctAnswer[2]}
-
-4) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
-Your Answer: ${candidateAnswers[3]}
-Correct Answer: ${correctAnswer[3]}
-
-5) What is the minimum crew size for the ISS?
-Your Answer: ${candidateAnswers[4]}
-Correct Answer: ${correctAnswer[4]}
-
->>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<
->>> Status: ${status} <<<`);;
+${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<
+>>> Status: ${status} <<<`);
 }
 
 function runProgram() {
