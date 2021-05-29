@@ -12,7 +12,7 @@ let questions;
 let correctAnswers;  
 let candidateAnswers =[];
 let numberCorrect = 0;
-let testString;
+let testString = '';
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
