@@ -22,9 +22,14 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < question.length; i++) {
-     
-    candidateAnswer = input.question(question[i]);
     
+    // !!! Couldn't figure out how to get input validation to prevent empty string submission !!!
+    // while (candidateAnswer !== '') {
+    //   candidateAnswer = input.question(question[i]);
+    // }
+    
+    candidateAnswer = input.question(question[i]);
+
     candidateAnswers.push(String(candidateAnswer));
   }
 }
@@ -35,7 +40,7 @@ function gradeQuiz(candidateAnswers) {
   for (let i = 0; i < candidateAnswers.length; i++) {
 
     testString += `${i + 1}) ${question[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswer[i]}\n\n`;
-    
+
     if (candidateAnswers[i].toLowerCase() === correctAnswer[i].toLowerCase()) {
       numberCorrect += 1;
     }
