@@ -1,7 +1,7 @@
 const input = require('readline-sync');
 
 // TODO 2: modify your quiz app to ask 5 questions //
-
+//comment
 // TODO 1.1a: Define candidateName // 
 let candidateName = '';
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
@@ -10,14 +10,16 @@ let correctAnswer = ['Sally Ride', "true", "40", "Trajectory", "3"];
 let candidateAnswer;
 let questions;
 let correctAnswers;  
-let candidateAnswers =[];
+let candidateAnswers = [];
 let numberCorrect = 0;
 let testString = '';
 let testSummary = '';
+let grade;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  return input.question('What is your name? ');
+  candidateName = input.question('What is your name? '); 
+  return candidateName;
 }
 
 function askQuestion() {
@@ -48,7 +50,7 @@ function gradeQuiz(candidateAnswers) {
   }
   
 
-  let grade = (numberCorrect / question.length) * 100;
+  grade = (numberCorrect / question.length) * 100;
 
   if (grade >= 80) {
     status = 'PASSED';
@@ -58,7 +60,7 @@ function gradeQuiz(candidateAnswers) {
 
   testSummary = `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${question.length} responses correct) <<<\n>>> Status: ${status} <<<`;
 
-  return console.log(testSummary);
+  return grade;
 }
 
 function runProgram() {
