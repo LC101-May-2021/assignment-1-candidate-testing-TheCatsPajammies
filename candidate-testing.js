@@ -51,7 +51,7 @@ function gradeQuiz(candidateAnswers) {
   }
   
 
-  grade = (numberCorrect / questions.length) * 100;
+  grade = String((numberCorrect / questions.length) * 100);
 
   if (grade >= 80) {
     status = 'PASSED';
@@ -71,6 +71,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
   console.log(testSummary);
+  console.log(grade);
 }
 
 // Don't write any code below this line //
