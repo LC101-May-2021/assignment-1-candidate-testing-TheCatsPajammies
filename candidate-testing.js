@@ -15,6 +15,7 @@ let numberCorrect = 0;
 let testString = '';
 let testSummary = '';
 let grade;
+let status;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -44,7 +45,7 @@ function gradeQuiz(candidateAnswers) {
 
     testString += `${i + 1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`;
 
-    if (candidateAnswers[i].toLowerCase() === correctAnswer[i].toLowerCase()) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       numberCorrect += 1;
     }
   }
@@ -58,7 +59,7 @@ function gradeQuiz(candidateAnswers) {
     status = 'FAILED';
   }
 
-  testSummary = `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct) <<<\n>>> Status: ${status} <<<`;
+  testSummary += `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct) <<<\n>>> Status: ${status} <<<`;
 
   return grade;
 }
@@ -69,6 +70,7 @@ function runProgram() {
   console.log(`\nHello, ${candidateName}!\n`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+  console.log(testSummary);
 }
 
 // Don't write any code below this line //
