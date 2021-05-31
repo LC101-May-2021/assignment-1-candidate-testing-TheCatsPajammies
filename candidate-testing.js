@@ -55,8 +55,7 @@ function gradeQuiz(candidateAnswers) {
   
   // Calculate the candidate's score as a percentage,
   // Somewhere below TODO 1.2c you should see a variable declaration for grade. Use this to calculate the candidate's score.
-  //     To calculate the candidate's percentage, use the equation:
-  //  (Number of Correct Answers) / (Number of Quiz Questions) * 100
+  // To calculate the candidate's percentage, use the equation: (Number of Correct Answers) / (Number of Quiz Questions) * 100
   grade = (numberCorrect) / (questions.length) * 100;
   // Convey to the candidate if they have passed the quiz with an 80% or if they have failed.
   if (grade >= 80) {
@@ -64,7 +63,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     status = 'FAILED';
   }
-  // Convey to the candidate if they have passed the quiz with an 80% or if they have failed.
+  // Convey to the candidate if they have passed the quiz with an 80% or if they have failed cot'd.
   // Replace the basic feedback from TODO 1.2c with a template literal that displays each of the candidate's responses in addition to the corresponding correct answers.
   testSummary += `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct) <<<\n>>> Status: ${status} <<<`;
 
@@ -74,6 +73,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
+  // Look for TODO 1.1c. Underneath it, write a message to the console greeting the user using the name they just provided.
   console.log(`\nHello, ${candidateName}!\n`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
