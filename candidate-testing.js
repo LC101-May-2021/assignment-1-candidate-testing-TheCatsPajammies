@@ -50,7 +50,7 @@ function gradeQuiz(candidateAnswers) {
     // Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       numberCorrect += 1;
-      console.log(numberCorrect);
+      //console.log(numberCorrect);
     }
   }
   
@@ -80,6 +80,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
   console.log(testSummary);
+  // Had to print these values to find out what my code was doing wrong!
   //console.log(gradeQuiz(candidateAnswers));
   //console.log(numberCorrect + ' = numberCorrect');
   //console.log(questions.length);
