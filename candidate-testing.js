@@ -57,7 +57,7 @@ function gradeQuiz(candidateAnswers) {
   // Somewhere below TODO 1.2c you should see a variable declaration for grade. Use this to calculate the candidate's score.
   //     To calculate the candidate's percentage, use the equation:
   //  (Number of Correct Answers) / (Number of Quiz Questions) * 100
-  grade = (numberCorrect / questions.length) * 100;
+  grade = (numberCorrect) / (questions.length) * 100;
   // Convey to the candidate if they have passed the quiz with an 80% or if they have failed.
   if (grade >= 80) {
     status = 'PASSED';
