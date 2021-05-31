@@ -82,6 +82,7 @@ function runProgram() {
   console.log(testSummary);
   // Had to print these values to find out what my code was doing wrong!
   //console.log(gradeQuiz(candidateAnswers));
+  //console.log(grade);
   //console.log(numberCorrect + ' = numberCorrect');
   //console.log(questions.length);
   //console.log(candidateAnswers.length);
