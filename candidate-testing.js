@@ -76,7 +76,7 @@ function runProgram() {
   // Look for TODO 1.1c. Underneath it, write a message to the console greeting the user using the name they just provided.
   console.log(`\nHello, ${candidateName}!\n`);
   askQuestion();
-  gradeQuiz(this.candidateAnswers);
+  gradeQuiz(candidateAnswers);
   console.log(testSummary);
   //console.log(grade);
 }
