@@ -25,6 +25,7 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+  // Replace your code from TODO 1.2b with a loop that programmatically asks each question in the array and stores the user's responses.
   for (let i = 0; i < questions.length; i++) {
     
     // !!! Couldn't figure out how to get input validation to prevent empty string submission !!!
@@ -40,25 +41,31 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
+  // Lines 45 - 52 = Compare the candidate answers with the correct answers, line 48 is first part of template literal required for the template literal on line 69 for test feedback.
   for (let i = 0; i < candidateAnswers.length; i++) {
 
     testString += `${i + 1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`;
-
+    
+    // Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       numberCorrect += 1;
     }
   }
   
-
-  grade = String((numberCorrect / questions.length) * 100);
-
+  // Calculate the candidate's score as a percentage,
+  // Somewhere below TODO 1.2c you should see a variable declaration for grade. Use this to calculate the candidate's score.
+  //     To calculate the candidate's percentage, use the equation:
+  //  (Number of Correct Answers) / (Number of Quiz Questions) * 100
+  grade = (numberCorrect / questions.length) * 100;
+  // Convey to the candidate if they have passed the quiz with an 80% or if they have failed.
   if (grade >= 80) {
     status = 'PASSED';
   } else {
     status = 'FAILED';
   }
-
+  // Convey to the candidate if they have passed the quiz with an 80% or if they have failed.
+  // Replace the basic feedback from TODO 1.2c with a template literal that displays each of the candidate's responses in addition to the corresponding correct answers.
   testSummary += `\nCandidate Name: ${candidateName}\n${testString}>>> Overall Grade: ${grade}% (${numberCorrect} of ${questions.length} responses correct) <<<\n>>> Status: ${status} <<<`;
 
   return grade;
@@ -71,7 +78,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
   console.log(testSummary);
-  console.log(grade);
+  //console.log(grade);
 }
 
 // Don't write any code below this line //
