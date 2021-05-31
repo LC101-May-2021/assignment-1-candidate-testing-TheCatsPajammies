@@ -44,7 +44,7 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
   // Lines 45 - 52 = Compare the candidate answers with the correct answers, line 48 is first part of template literal required for the template literal on line 69 for test feedback.
   for (let i = 0; i < candidateAnswers.length; i++) {
-    // testString was written to reduce redundancy of code in case extra questions and answers are added to the quiz.
+    // testString was written to reduce redundancy of code in case extra questions and answers are added to the questions and correctAnswers variables.
     testString += `${i + 1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`;
     
     // Checking for the correct answer should be case insensitive (e.g. "Orbit" is the same as "orbit").
