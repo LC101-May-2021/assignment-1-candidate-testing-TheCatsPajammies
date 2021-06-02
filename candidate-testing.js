@@ -32,7 +32,7 @@ function askQuestion() {
     // while (candidateAnswer !== '') {
     //   candidateAnswer = input.question(question[i]);
     // } !!!
-    // Asks question - formatted using a technique from Gracie
+    // Asks question - formatted using a technique from Gracie, however, Jasmine didn't seem to like it so I had to change it back.
     candidateAnswer = input.question(questions[i]);
     // Stores response
     candidateAnswers.push(String(candidateAnswer));
