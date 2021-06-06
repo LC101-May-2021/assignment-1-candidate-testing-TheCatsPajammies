@@ -30,10 +30,8 @@ function gradeQuiz(candidateAnswers) {
 
     testString += `${i + 1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`;
     
-    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      numberCorrect += 1;
-      
-    }
+    let correctCounter = (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) ? numberCorrect += 1 : numberCorrect += 0;
+
   }
   
   let grade = ((numberCorrect / questions.length) * 100);
@@ -67,5 +65,6 @@ module.exports = {
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
 };
+
 
 
